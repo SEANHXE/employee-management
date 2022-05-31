@@ -35,7 +35,7 @@ class CreateEmployeeComponent extends Component {
     }
 
     getTitle() {
-        if (this.state.id == -1) {
+        if (this.state.id === '_add') {
             return (<h3 className = "text-center">Add Employee</h3>);
         }
         else {
@@ -61,9 +61,9 @@ class CreateEmployeeComponent extends Component {
         console.log('employee =>' + JSON.stringify(employee));
 
         // step 5
-        if (this.state.id == -1) {
+        if (this.state.id === '_add') {
             EmployeeService.createEmployee((employee)).then(res => {
-                this.props.history.push('employees');
+                this.props.history.push('/employees');
             });
         }
         else {
@@ -102,10 +102,10 @@ class CreateEmployeeComponent extends Component {
                                       <input placeholder = "Email Address" name = "emailId" className = "form-control"
                                              value={this.state.emailId} onChange={this.changeEmailHandler}/>
                                   </div>
-                                  
+
                                   <button className = "btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
                                   <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
-                                  
+
                               </form>
                           </div>
                       </div>
