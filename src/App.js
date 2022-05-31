@@ -16,10 +16,10 @@ function App() {
               <HeaderComponent/>
               <div className="container">
                   <Switch>
-                      <Route path = "/employees" component = {ListEmployeeComponent}/>
-                      <Route path = "/add-employee" component = {CreateEmployeeComponent}/>
-                      <Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}/>
                       <Route exact path = "/" component = {ListEmployeeComponent}/>
+                      <Route path = "/employees" component = {ListEmployeeComponent}/>
+                      <Route path = "/add-employee/:id" component = {CreateEmployeeComponent}/>
+                      {/*<Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}/>*/}
                       <Redirect to = "/" component={ListEmployeeComponent}/>
                   </Switch>
               </div>
